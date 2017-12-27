@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		477A0B471FF3BCF40098D31A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477A0B461FF3BCF40098D31A /* AppDelegate.swift */; };
+		477A0B491FF3BCF40098D31A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477A0B481FF3BCF40098D31A /* ViewController.swift */; };
+		477A0B4C1FF3BCF40098D31A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477A0B4A1FF3BCF40098D31A /* Main.storyboard */; };
+		477A0B4E1FF3BCF40098D31A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477A0B4D1FF3BCF40098D31A /* Assets.xcassets */; };
+		477A0B511FF3BCF40098D31A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477A0B4F1FF3BCF40098D31A /* LaunchScreen.storyboard */; };
+		477A0B5C1FF3BCF40098D31A /* GuitarTunerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477A0B5B1FF3BCF40098D31A /* GuitarTunerTests.swift */; };
+		477A0B671FF3BCF40098D31A /* GuitarTunerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477A0B661FF3BCF40098D31A /* GuitarTunerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477A0B581FF3BCF40098D31A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 477A0B3B1FF3BCF40098D31A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477A0B421FF3BCF40098D31A;
+			remoteInfo = GuitarTuner;
+		};
+		477A0B631FF3BCF40098D31A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 477A0B3B1FF3BCF40098D31A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477A0B421FF3BCF40098D31A;
+			remoteInfo = GuitarTuner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		477A0B431FF3BCF40098D31A /* GuitarTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuitarTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		477A0B461FF3BCF40098D31A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		477A0B481FF3BCF40098D31A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		477A0B4B1FF3BCF40098D31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		477A0B4D1FF3BCF40098D31A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		477A0B501FF3BCF40098D31A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		477A0B521FF3BCF40098D31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477A0B571FF3BCF40098D31A /* GuitarTunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuitarTunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		477A0B5B1FF3BCF40098D31A /* GuitarTunerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarTunerTests.swift; sourceTree = "<group>"; };
+		477A0B5D1FF3BCF40098D31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477A0B621FF3BCF40098D31A /* GuitarTunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuitarTunerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		477A0B661FF3BCF40098D31A /* GuitarTunerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarTunerUITests.swift; sourceTree = "<group>"; };
+		477A0B681FF3BCF40098D31A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		477A0B401FF3BCF40098D31A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B541FF3BCF40098D31A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B5F1FF3BCF40098D31A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		477A0B3A1FF3BCF40098D31A = {
+			isa = PBXGroup;
+			children = (
+				477A0B451FF3BCF40098D31A /* GuitarTuner */,
+				477A0B5A1FF3BCF40098D31A /* GuitarTunerTests */,
+				477A0B651FF3BCF40098D31A /* GuitarTunerUITests */,
+				477A0B441FF3BCF40098D31A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		477A0B441FF3BCF40098D31A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B431FF3BCF40098D31A /* GuitarTuner.app */,
+				477A0B571FF3BCF40098D31A /* GuitarTunerTests.xctest */,
+				477A0B621FF3BCF40098D31A /* GuitarTunerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		477A0B451FF3BCF40098D31A /* GuitarTuner */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B461FF3BCF40098D31A /* AppDelegate.swift */,
+				477A0B481FF3BCF40098D31A /* ViewController.swift */,
+				477A0B4A1FF3BCF40098D31A /* Main.storyboard */,
+				477A0B4D1FF3BCF40098D31A /* Assets.xcassets */,
+				477A0B4F1FF3BCF40098D31A /* LaunchScreen.storyboard */,
+				477A0B521FF3BCF40098D31A /* Info.plist */,
+			);
+			path = GuitarTuner;
+			sourceTree = "<group>";
+		};
+		477A0B5A1FF3BCF40098D31A /* GuitarTunerTests */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B5B1FF3BCF40098D31A /* GuitarTunerTests.swift */,
+				477A0B5D1FF3BCF40098D31A /* Info.plist */,
+			);
+			path = GuitarTunerTests;
+			sourceTree = "<group>";
+		};
+		477A0B651FF3BCF40098D31A /* GuitarTunerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B661FF3BCF40098D31A /* GuitarTunerUITests.swift */,
+				477A0B681FF3BCF40098D31A /* Info.plist */,
+			);
+			path = GuitarTunerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		477A0B421FF3BCF40098D31A /* GuitarTuner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477A0B6B1FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTuner" */;
+			buildPhases = (
+				477A0B3F1FF3BCF40098D31A /* Sources */,
+				477A0B401FF3BCF40098D31A /* Frameworks */,
+				477A0B411FF3BCF40098D31A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuitarTuner;
+			productName = GuitarTuner;
+			productReference = 477A0B431FF3BCF40098D31A /* GuitarTuner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		477A0B561FF3BCF40098D31A /* GuitarTunerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477A0B6E1FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTunerTests" */;
+			buildPhases = (
+				477A0B531FF3BCF40098D31A /* Sources */,
+				477A0B541FF3BCF40098D31A /* Frameworks */,
+				477A0B551FF3BCF40098D31A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477A0B591FF3BCF40098D31A /* PBXTargetDependency */,
+			);
+			name = GuitarTunerTests;
+			productName = GuitarTunerTests;
+			productReference = 477A0B571FF3BCF40098D31A /* GuitarTunerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		477A0B611FF3BCF40098D31A /* GuitarTunerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477A0B711FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTunerUITests" */;
+			buildPhases = (
+				477A0B5E1FF3BCF40098D31A /* Sources */,
+				477A0B5F1FF3BCF40098D31A /* Frameworks */,
+				477A0B601FF3BCF40098D31A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477A0B641FF3BCF40098D31A /* PBXTargetDependency */,
+			);
+			name = GuitarTunerUITests;
+			productName = GuitarTunerUITests;
+			productReference = 477A0B621FF3BCF40098D31A /* GuitarTunerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		477A0B3B1FF3BCF40098D31A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Hoang;
+				TargetAttributes = {
+					477A0B421FF3BCF40098D31A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					477A0B561FF3BCF40098D31A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 477A0B421FF3BCF40098D31A;
+					};
+					477A0B611FF3BCF40098D31A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 477A0B421FF3BCF40098D31A;
+					};
+				};
+			};
+			buildConfigurationList = 477A0B3E1FF3BCF40098D31A /* Build configuration list for PBXProject "GuitarTuner" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 477A0B3A1FF3BCF40098D31A;
+			productRefGroup = 477A0B441FF3BCF40098D31A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				477A0B421FF3BCF40098D31A /* GuitarTuner */,
+				477A0B561FF3BCF40098D31A /* GuitarTunerTests */,
+				477A0B611FF3BCF40098D31A /* GuitarTunerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		477A0B411FF3BCF40098D31A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477A0B511FF3BCF40098D31A /* LaunchScreen.storyboard in Resources */,
+				477A0B4E1FF3BCF40098D31A /* Assets.xcassets in Resources */,
+				477A0B4C1FF3BCF40098D31A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B551FF3BCF40098D31A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B601FF3BCF40098D31A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		477A0B3F1FF3BCF40098D31A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477A0B491FF3BCF40098D31A /* ViewController.swift in Sources */,
+				477A0B471FF3BCF40098D31A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B531FF3BCF40098D31A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477A0B5C1FF3BCF40098D31A /* GuitarTunerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477A0B5E1FF3BCF40098D31A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477A0B671FF3BCF40098D31A /* GuitarTunerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		477A0B591FF3BCF40098D31A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477A0B421FF3BCF40098D31A /* GuitarTuner */;
+			targetProxy = 477A0B581FF3BCF40098D31A /* PBXContainerItemProxy */;
+		};
+		477A0B641FF3BCF40098D31A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477A0B421FF3BCF40098D31A /* GuitarTuner */;
+			targetProxy = 477A0B631FF3BCF40098D31A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		477A0B4A1FF3BCF40098D31A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477A0B4B1FF3BCF40098D31A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		477A0B4F1FF3BCF40098D31A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477A0B501FF3BCF40098D31A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		477A0B691FF3BCF40098D31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		477A0B6A1FF3BCF40098D31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		477A0B6C1FF3BCF40098D31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTuner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477A0B6D1FF3BCF40098D31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTuner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		477A0B6F1FF3BCF40098D31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTunerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuitarTuner.app/GuitarTuner";
+			};
+			name = Debug;
+		};
+		477A0B701FF3BCF40098D31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTunerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuitarTuner.app/GuitarTuner";
+			};
+			name = Release;
+		};
+		477A0B721FF3BCF40098D31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTunerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GuitarTuner;
+			};
+			name = Debug;
+		};
+		477A0B731FF3BCF40098D31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4B5PEQM7U2;
+				INFOPLIST_FILE = GuitarTunerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hoang.GuitarTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GuitarTuner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		477A0B3E1FF3BCF40098D31A /* Build configuration list for PBXProject "GuitarTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477A0B691FF3BCF40098D31A /* Debug */,
+				477A0B6A1FF3BCF40098D31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477A0B6B1FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477A0B6C1FF3BCF40098D31A /* Debug */,
+				477A0B6D1FF3BCF40098D31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477A0B6E1FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTunerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477A0B6F1FF3BCF40098D31A /* Debug */,
+				477A0B701FF3BCF40098D31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477A0B711FF3BCF40098D31A /* Build configuration list for PBXNativeTarget "GuitarTunerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477A0B721FF3BCF40098D31A /* Debug */,
+				477A0B731FF3BCF40098D31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 477A0B3B1FF3BCF40098D31A /* Project object */;
+}
