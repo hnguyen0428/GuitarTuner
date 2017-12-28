@@ -10,6 +10,14 @@ import UIKit
 import AVFoundation
 import Accelerate
 
+var totalMonoSamples: [Float] = [Float]()
+var totalFrameCount: Int = 0
+
+func accumulateSamples(frameCount: Int, samples: [Float]) {
+    totalMonoSamples.append(contentsOf: samples)
+    totalFrameCount += frameCount
+}
+
 class TuningViewController: UIViewController {
     
     var tuningView: TuningView!
@@ -24,9 +32,14 @@ class TuningViewController: UIViewController {
         
         let audioCallback: AudioInputCallback = { (timeStamps, frameCount, samples) -> Void in
             // TODO: Do FFT in order to figure out the frequency
+            accumulateSamples(frameCount: frameCount, samples: samples)
+            self.processAudio(timeStamps: timeStamps, frameCount: totalFrameCount,
+                              monoSamples: totalMonoSamples)
         }
         
-        audioManager = AudioManager(audioInputCallback: audioCallback)
+        audioManager = AudioManager(audioInputCallback: audioCallback,
+                                    sampleRate: kSampleRate,
+                                    numberOfChannels: 1)
         audioManager.startRecording()
         
     }
@@ -48,5 +61,46 @@ class TuningViewController: UIViewController {
         view.addSubview(tuningView)
     }
     
+    func processAudio(timeStamps: Double, frameCount: Int, monoSamples: [Float]) {
+        // Number of frames is not large enough
+        if frameCount < accumulatorDataLength {
+            return
+        }
+        
+        let audioFFT = AudioFFT(sampleSize: frameCount)
+        audioFFT.computeFFT(monoSamples)
+        
+        let outFFTData = audioFFT.outFFTData
+        
+        // Find the bin with the maximum magnitude
+        var maxIndex: Int = 0
+        _ = maxOfFloatArray(array: outFFTData, maxIndex: &maxIndex)
+        
+        let fftDataSize = frameCount / 2
+        let audioFrequency = Float(maxIndex) / Float(fftDataSize) * audioFFT.nyquistFreq
+        print("Max Frequency: \(audioFrequency) Hz")
+        
+        resetTotalSamples()
+    }
+    
+}
+
+func resetTotalSamples() {
+    totalMonoSamples.removeAll()
+    totalFrameCount = 0
+}
+
+func maxOfFloatArray(array: [Float], maxIndex: inout Int) -> Float {
+    var mIndex: Int = 0
+    var maxValue: Float = 0.0
+    for (index, value) in array.enumerated() {
+        if value > maxValue {
+            mIndex = index
+            maxValue = value
+        }
+    }
+    
+    maxIndex = mIndex
+    return maxValue
 }
 

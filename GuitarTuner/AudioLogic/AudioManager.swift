@@ -50,7 +50,7 @@ final class AudioManager: NSObject {
             mNumberBuffers: 1,
             mBuffers: AudioBuffer(
                 mNumberChannels: UInt32(audioObject.numberOfChannels),
-                mDataByteSize: 4,
+                mDataByteSize: 16,
                 mData: nil
             )
         )
@@ -69,9 +69,8 @@ final class AudioManager: NSObject {
         var monoSamples = [Float]() // Floating point sample
         let ptr = bufferList.mBuffers.mData?.assumingMemoryBound(to: Float.self)
         
-        // Appending the float value every 512 frames
-        monoSamples.append(contentsOf: UnsafeBufferPointer(start: ptr, count: Int(frameCount)))
         
+        monoSamples.append(contentsOf: UnsafeBufferPointer(start: ptr, count: Int(frameCount)))
         // Pass data to TuningViewController using callback
         audioObject.audioInputCallback(inTimeStamp.pointee.mSampleTime / Double(audioObject.sampleRate),
                                       Int(frameCount),
@@ -84,7 +83,7 @@ final class AudioManager: NSObject {
     // The audioInputCallback passed in will get triggered everytime the
     // AudioUnit gets a sample of audio
     init(audioInputCallback callback: @escaping AudioInputCallback,
-         sampleRate: Float = 44100.0, numberOfChannels: Int = 1) {
+         sampleRate: Float = kSampleRate, numberOfChannels: Int = 1) {
         self.sampleRate = sampleRate
         self.numberOfChannels = numberOfChannels
         self.audioInputCallback = callback
@@ -103,7 +102,7 @@ final class AudioManager: NSObject {
             
             try audioSession.setPreferredSampleRate(Double(self.sampleRate))
             
-            try audioSession.setPreferredIOBufferDuration(0.01)
+            try audioSession.setPreferredIOBufferDuration(0.058)
             
             audioSession.requestRecordPermission { hasPermission in
                 if !hasPermission {
@@ -162,13 +161,14 @@ final class AudioManager: NSObject {
             mSampleRate: Double(self.sampleRate),
             mFormatID: kAudioFormatLinearPCM, // Use uncompressed format so we can process the signal
             mFormatFlags: kAudioFormatFlagsNativeFloatPacked | kAudioFormatFlagIsNonInterleaved,
-            mBytesPerPacket: 4,
+            mBytesPerPacket: UInt32(self.numberOfChannels * MemoryLayout<UInt32>.size),
             mFramesPerPacket: 1,
-            mBytesPerFrame: 4,
+            mBytesPerFrame: UInt32(self.numberOfChannels * MemoryLayout<UInt32>.size),
             mChannelsPerFrame: UInt32(self.numberOfChannels),
             mBitsPerChannel: 4 * 8,
             mReserved: 0
         )
+        
         
         osErr = AudioUnitSetProperty(audioUnit,
                                      kAudioUnitProperty_StreamFormat,
