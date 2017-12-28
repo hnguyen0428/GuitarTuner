@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0902A0F67C5D3A1A88204C00AF0F64C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		10F127E821CA802296AD0E9525F394F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		25D3D8E1798B12A170B5121BE69D6335 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6549C8B14D6A7F5B13CF655AEC4D2620 /* Pods-GuitarTunerUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DF6B81B8F6E21D53EC3DE74E54464AB /* Pods-GuitarTunerUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6680054D6B451DB5C03D2E47B98C3736 /* Pods-GuitarTuner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9EAED3177A66DCD607299117761A4 /* Pods-GuitarTuner-dummy.m */; };
+		7E9F818C41C342AB223DF7DCDFEB113B /* Pods-GuitarTunerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 037264D35867E5ADCF32B944120662D4 /* Pods-GuitarTunerTests-dummy.m */; };
+		8903FC0ABD354D3BFE4640FB31A61798 /* Pods-GuitarTuner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6B14245363A05F1B43D300955C2F81D /* Pods-GuitarTuner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EC6755847E9EABA0F049BD8D97B042C /* Pods-GuitarTunerUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 654344162998E3E05427D64FDDD55C9A /* Pods-GuitarTunerUITests-dummy.m */; };
+		E938A676CCB0176D5CF93968FE5C8BD3 /* Pods-GuitarTunerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FAC4B7376865FD052A2D8E407734C37 /* Pods-GuitarTunerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		037264D35867E5ADCF32B944120662D4 /* Pods-GuitarTunerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GuitarTunerTests-dummy.m"; sourceTree = "<group>"; };
+		0C0D59F37CD3E18A39424428FB0B6859 /* Pods-GuitarTuner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuitarTuner-acknowledgements.plist"; sourceTree = "<group>"; };
+		0D1156980EC19CF884651FCDABE45839 /* Pods-GuitarTunerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GuitarTunerTests.modulemap"; sourceTree = "<group>"; };
+		0D7F05B52C13C122932F0E528FEECDB1 /* Pods-GuitarTunerUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTunerUITests-frameworks.sh"; sourceTree = "<group>"; };
+		238CBD296907EDAB1D4CBD9A0477BAFC /* Pods-GuitarTunerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuitarTunerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		26C6D03615950D6E4FDC53341224D9CD /* Pods-GuitarTuner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTuner.release.xcconfig"; sourceTree = "<group>"; };
+		2CF9EAED3177A66DCD607299117761A4 /* Pods-GuitarTuner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GuitarTuner-dummy.m"; sourceTree = "<group>"; };
+		2DF6B81B8F6E21D53EC3DE74E54464AB /* Pods-GuitarTunerUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GuitarTunerUITests-umbrella.h"; sourceTree = "<group>"; };
+		3719B0E9F1B0F046CD05EC66A1CD16AF /* Pods-GuitarTuner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTuner.debug.xcconfig"; sourceTree = "<group>"; };
+		389AD33E8177612873186EBE40DFFF18 /* Pods-GuitarTunerTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTunerTests-frameworks.sh"; sourceTree = "<group>"; };
+		42733FC9A57533CC5E314649857EBAB1 /* Pods-GuitarTuner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GuitarTuner.modulemap"; sourceTree = "<group>"; };
+		4310A93F57EF51C05A5A0CCCECE07F81 /* Pods-GuitarTuner-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTuner-resources.sh"; sourceTree = "<group>"; };
+		4DF7986652C7B4CB1CA387A735688EDB /* Pods-GuitarTunerUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTunerUITests-resources.sh"; sourceTree = "<group>"; };
+		53C4BE2EC9F798E31BEB72BAB410C062 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BBAE883191A92D6A0F0A45BEC05E8D5 /* Pods_GuitarTunerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GuitarTunerUITests.framework; path = "Pods-GuitarTunerUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D853F9F7E57799BC4A599F9B6033ABC /* Pods-GuitarTunerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GuitarTunerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5FAD997752971842D93521A485F3B830 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		654344162998E3E05427D64FDDD55C9A /* Pods-GuitarTunerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GuitarTunerUITests-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		71049C93D3917D751A7FB829F63F3CCD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75161FC782F17EEE4D69758ECCBA7A05 /* Pods-GuitarTunerUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GuitarTunerUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		76365D65E7A5803C7A8AFA08CBE62949 /* Pods-GuitarTuner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GuitarTuner-acknowledgements.markdown"; sourceTree = "<group>"; };
+		828D44287FA7759D303D183A023411FD /* Pods-GuitarTunerTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTunerTests-resources.sh"; sourceTree = "<group>"; };
+		844E61EE09E633023AA58EB5677DCB43 /* Pods-GuitarTunerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTunerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FAC4B7376865FD052A2D8E407734C37 /* Pods-GuitarTunerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GuitarTunerTests-umbrella.h"; sourceTree = "<group>"; };
+		92C33269C105046CF7ECAD6F46606F83 /* Pods-GuitarTunerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTunerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3208FB6110E1AE8F7CE8483F7EFDBE2 /* Pods-GuitarTunerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTunerTests.release.xcconfig"; sourceTree = "<group>"; };
+		BAAC82BF7403AC975599E467A9A5463F /* Pods_GuitarTunerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GuitarTunerTests.framework; path = "Pods-GuitarTunerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C1B7AF992E3FF67A105BF29CCA999E /* Pods-GuitarTunerUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GuitarTunerUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D06A3DECDF7D219479F6BE07F667B394 /* Pods_GuitarTuner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GuitarTuner.framework; path = "Pods-GuitarTuner.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6B14245363A05F1B43D300955C2F81D /* Pods-GuitarTuner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GuitarTuner-umbrella.h"; sourceTree = "<group>"; };
+		F85C87459A74A151ED4AE35EC0D99D44 /* Pods-GuitarTunerUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GuitarTunerUITests.modulemap"; sourceTree = "<group>"; };
+		FD4870AD8B26BDF08F8C0ABDEA8F5DC0 /* Pods-GuitarTuner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GuitarTuner-frameworks.sh"; sourceTree = "<group>"; };
+		FE85C14250299991DB4BE4B4193A5F00 /* Pods-GuitarTunerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GuitarTunerTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E2FE15941AF449FC0168EA2715E5048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25D3D8E1798B12A170B5121BE69D6335 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A9FE5F265547B7A425E50B331B06F94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0902A0F67C5D3A1A88204C00AF0F64C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D800FC1792D03B4064AAC451A728131D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10F127E821CA802296AD0E9525F394F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		219A4B067BA7C1E02691F5E7E1ED63EE /* Pods-GuitarTunerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5FAD997752971842D93521A485F3B830 /* Info.plist */,
+				0D1156980EC19CF884651FCDABE45839 /* Pods-GuitarTunerTests.modulemap */,
+				5D853F9F7E57799BC4A599F9B6033ABC /* Pods-GuitarTunerTests-acknowledgements.markdown */,
+				238CBD296907EDAB1D4CBD9A0477BAFC /* Pods-GuitarTunerTests-acknowledgements.plist */,
+				037264D35867E5ADCF32B944120662D4 /* Pods-GuitarTunerTests-dummy.m */,
+				389AD33E8177612873186EBE40DFFF18 /* Pods-GuitarTunerTests-frameworks.sh */,
+				828D44287FA7759D303D183A023411FD /* Pods-GuitarTunerTests-resources.sh */,
+				8FAC4B7376865FD052A2D8E407734C37 /* Pods-GuitarTunerTests-umbrella.h */,
+				FE85C14250299991DB4BE4B4193A5F00 /* Pods-GuitarTunerTests.debug.xcconfig */,
+				A3208FB6110E1AE8F7CE8483F7EFDBE2 /* Pods-GuitarTunerTests.release.xcconfig */,
+			);
+			name = "Pods-GuitarTunerTests";
+			path = "Target Support Files/Pods-GuitarTunerTests";
+			sourceTree = "<group>";
+		};
+		2836623889D21F856638D6494D2701FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D06A3DECDF7D219479F6BE07F667B394 /* Pods_GuitarTuner.framework */,
+				BAAC82BF7403AC975599E467A9A5463F /* Pods_GuitarTunerTests.framework */,
+				5BBAE883191A92D6A0F0A45BEC05E8D5 /* Pods_GuitarTunerUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C367ED1CFECF08259EE889F28C66435 /* Pods-GuitarTuner */ = {
+			isa = PBXGroup;
+			children = (
+				53C4BE2EC9F798E31BEB72BAB410C062 /* Info.plist */,
+				42733FC9A57533CC5E314649857EBAB1 /* Pods-GuitarTuner.modulemap */,
+				76365D65E7A5803C7A8AFA08CBE62949 /* Pods-GuitarTuner-acknowledgements.markdown */,
+				0C0D59F37CD3E18A39424428FB0B6859 /* Pods-GuitarTuner-acknowledgements.plist */,
+				2CF9EAED3177A66DCD607299117761A4 /* Pods-GuitarTuner-dummy.m */,
+				FD4870AD8B26BDF08F8C0ABDEA8F5DC0 /* Pods-GuitarTuner-frameworks.sh */,
+				4310A93F57EF51C05A5A0CCCECE07F81 /* Pods-GuitarTuner-resources.sh */,
+				D6B14245363A05F1B43D300955C2F81D /* Pods-GuitarTuner-umbrella.h */,
+				3719B0E9F1B0F046CD05EC66A1CD16AF /* Pods-GuitarTuner.debug.xcconfig */,
+				26C6D03615950D6E4FDC53341224D9CD /* Pods-GuitarTuner.release.xcconfig */,
+			);
+			name = "Pods-GuitarTuner";
+			path = "Target Support Files/Pods-GuitarTuner";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				2836623889D21F856638D6494D2701FA /* Products */,
+				D7D72044B36C37A6194C129079C2B582 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D7D72044B36C37A6194C129079C2B582 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C367ED1CFECF08259EE889F28C66435 /* Pods-GuitarTuner */,
+				219A4B067BA7C1E02691F5E7E1ED63EE /* Pods-GuitarTunerTests */,
+				F60A5278837AFD97F9E6A84A4BCC2597 /* Pods-GuitarTunerUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F60A5278837AFD97F9E6A84A4BCC2597 /* Pods-GuitarTunerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				71049C93D3917D751A7FB829F63F3CCD /* Info.plist */,
+				F85C87459A74A151ED4AE35EC0D99D44 /* Pods-GuitarTunerUITests.modulemap */,
+				75161FC782F17EEE4D69758ECCBA7A05 /* Pods-GuitarTunerUITests-acknowledgements.markdown */,
+				C4C1B7AF992E3FF67A105BF29CCA999E /* Pods-GuitarTunerUITests-acknowledgements.plist */,
+				654344162998E3E05427D64FDDD55C9A /* Pods-GuitarTunerUITests-dummy.m */,
+				0D7F05B52C13C122932F0E528FEECDB1 /* Pods-GuitarTunerUITests-frameworks.sh */,
+				4DF7986652C7B4CB1CA387A735688EDB /* Pods-GuitarTunerUITests-resources.sh */,
+				2DF6B81B8F6E21D53EC3DE74E54464AB /* Pods-GuitarTunerUITests-umbrella.h */,
+				844E61EE09E633023AA58EB5677DCB43 /* Pods-GuitarTunerUITests.debug.xcconfig */,
+				92C33269C105046CF7ECAD6F46606F83 /* Pods-GuitarTunerUITests.release.xcconfig */,
+			);
+			name = "Pods-GuitarTunerUITests";
+			path = "Target Support Files/Pods-GuitarTunerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01AA240DF4D0C23654FE1797315D3A91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6549C8B14D6A7F5B13CF655AEC4D2620 /* Pods-GuitarTunerUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C1646E1AA8B9C2140350A917E626CE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8903FC0ABD354D3BFE4640FB31A61798 /* Pods-GuitarTuner-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0C4CC99BF8D7E2F70DE7C2DF6CB5BEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E938A676CCB0176D5CF93968FE5C8BD3 /* Pods-GuitarTunerTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		735941B52CFA3CC5C7C0BAFE95BB44BF /* Pods-GuitarTunerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27446232DABC127D5B1EECF85A89CE4F /* Build configuration list for PBXNativeTarget "Pods-GuitarTunerTests" */;
+			buildPhases = (
+				86152D5595F20364F5A56A8D57D28AB2 /* Sources */,
+				5E2FE15941AF449FC0168EA2715E5048 /* Frameworks */,
+				F0C4CC99BF8D7E2F70DE7C2DF6CB5BEC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GuitarTunerTests";
+			productName = "Pods-GuitarTunerTests";
+			productReference = BAAC82BF7403AC975599E467A9A5463F /* Pods_GuitarTunerTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B462964744DB38B840E042AF536CD178 /* Pods-GuitarTuner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CCB14A05CB5F447FD061B9BA35039F5 /* Build configuration list for PBXNativeTarget "Pods-GuitarTuner" */;
+			buildPhases = (
+				DDBBE8AC0A7BA90ECEC635B5C08E19CC /* Sources */,
+				D800FC1792D03B4064AAC451A728131D /* Frameworks */,
+				3C1646E1AA8B9C2140350A917E626CE4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GuitarTuner";
+			productName = "Pods-GuitarTuner";
+			productReference = D06A3DECDF7D219479F6BE07F667B394 /* Pods_GuitarTuner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C6421D79EB3CD60C2E9E0F6581241367 /* Pods-GuitarTunerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3434F0C4724603742EC8363178F5FFC /* Build configuration list for PBXNativeTarget "Pods-GuitarTunerUITests" */;
+			buildPhases = (
+				A2B3670584E8038A426C7AC0240422FF /* Sources */,
+				9A9FE5F265547B7A425E50B331B06F94 /* Frameworks */,
+				01AA240DF4D0C23654FE1797315D3A91 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GuitarTunerUITests";
+			productName = "Pods-GuitarTunerUITests";
+			productReference = 5BBAE883191A92D6A0F0A45BEC05E8D5 /* Pods_GuitarTunerUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 2836623889D21F856638D6494D2701FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B462964744DB38B840E042AF536CD178 /* Pods-GuitarTuner */,
+				735941B52CFA3CC5C7C0BAFE95BB44BF /* Pods-GuitarTunerTests */,
+				C6421D79EB3CD60C2E9E0F6581241367 /* Pods-GuitarTunerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86152D5595F20364F5A56A8D57D28AB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E9F818C41C342AB223DF7DCDFEB113B /* Pods-GuitarTunerTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2B3670584E8038A426C7AC0240422FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC6755847E9EABA0F049BD8D97B042C /* Pods-GuitarTunerUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDBBE8AC0A7BA90ECEC635B5C08E19CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6680054D6B451DB5C03D2E47B98C3736 /* Pods-GuitarTuner-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		106D9C58D6A6B2D1051740400960B499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE85C14250299991DB4BE4B4193A5F00 /* Pods-GuitarTunerTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTunerTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTunerTests/Pods-GuitarTunerTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTunerTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3270AEF1163A6D33ADBEAE8791A633B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26C6D03615950D6E4FDC53341224D9CD /* Pods-GuitarTuner.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTuner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTuner/Pods-GuitarTuner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTuner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7B3B2CDF8AB5473271CBFADC8E52D6B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3719B0E9F1B0F046CD05EC66A1CD16AF /* Pods-GuitarTuner.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTuner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTuner/Pods-GuitarTuner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTuner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A0B5334C3E103EA3F08EBC08B996C03F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92C33269C105046CF7ECAD6F46606F83 /* Pods-GuitarTunerUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTunerUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTunerUITests/Pods-GuitarTunerUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTunerUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ABC1C622E3A94D5EFA80B6DBB5E64193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6C19D725529E5D095EC3FF7CA313B86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3208FB6110E1AE8F7CE8483F7EFDBE2 /* Pods-GuitarTunerTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTunerTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTunerTests/Pods-GuitarTunerTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTunerTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B75B58A7CE2F2194E6872415B7EB86E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 844E61EE09E633023AA58EB5677DCB43 /* Pods-GuitarTunerUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-GuitarTunerUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GuitarTunerUITests/Pods-GuitarTunerUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GuitarTunerUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D72E489B59C3A70112D2342F402BD262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27446232DABC127D5B1EECF85A89CE4F /* Build configuration list for PBXNativeTarget "Pods-GuitarTunerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				106D9C58D6A6B2D1051740400960B499 /* Debug */,
+				B6C19D725529E5D095EC3FF7CA313B86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D72E489B59C3A70112D2342F402BD262 /* Debug */,
+				ABC1C622E3A94D5EFA80B6DBB5E64193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CCB14A05CB5F447FD061B9BA35039F5 /* Build configuration list for PBXNativeTarget "Pods-GuitarTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B3B2CDF8AB5473271CBFADC8E52D6B3 /* Debug */,
+				3270AEF1163A6D33ADBEAE8791A633B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3434F0C4724603742EC8363178F5FFC /* Build configuration list for PBXNativeTarget "Pods-GuitarTunerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B75B58A7CE2F2194E6872415B7EB86E7 /* Debug */,
+				A0B5334C3E103EA3F08EBC08B996C03F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
