@@ -76,6 +76,7 @@ class TuningViewController: UIViewController {
         var maxIndex: Int = 0
         _ = maxOfFloatArray(array: outFFTData, maxIndex: &maxIndex)
         
+        // Need to low pass filter
         let fftDataSize = frameCount / 2
         let audioFrequency = Float(maxIndex) / Float(fftDataSize) * audioFFT.nyquistFreq
         print("Max Frequency: \(audioFrequency) Hz")
@@ -84,6 +85,8 @@ class TuningViewController: UIViewController {
     }
     
 }
+
+
 
 func resetTotalSamples() {
     totalMonoSamples.removeAll()
