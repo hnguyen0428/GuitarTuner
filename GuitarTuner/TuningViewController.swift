@@ -16,8 +16,9 @@ func accumulateSamples(frameCount: Int, samples: [Float]) {
     totalFrameCount += frameCount
 }
 
-class TuningViewController: UIViewController, TuningViewDelegate {
+class TuningViewController: UIViewController, NotesViewDelegate {
     
+    var notesView: NotesView!
     var tuningView: TuningView!
     var audioManager: AudioManager!
     
@@ -32,6 +33,7 @@ class TuningViewController: UIViewController, TuningViewDelegate {
         
         view.backgroundColor = UIColor.darkGray
         setupTuningView()
+        setupNotesView()
         
         let audioCallback: AudioInputCallback = { (timeStamps, frameCount, samples) -> Void in
             accumulateSamples(frameCount: frameCount, samples: samples)
@@ -45,15 +47,32 @@ class TuningViewController: UIViewController, TuningViewDelegate {
     }
     
     func setupTuningView() {
+        let width = view.frame.width * 0.75
+        let height = view.frame.height * 0.20
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        tuningView = TuningView(frame: frame)
+        tuningView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(tuningView)
+        tuningView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        tuningView.heightAnchor.constraint(equalToConstant: height).isActive = true
+        tuningView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        let offset = view.frame.height * 0.10 +
+            self.navigationController!.navigationBar.frame.height
+        tuningView.topAnchor.constraint(equalTo: view.topAnchor, constant: offset).isActive = true
+    }
+    
+    func setupNotesView() {
         let width = view.frame.width * 0.70
         let height = view.frame.height * 0.35
         let y = view.frame.height * 0.50
         let frame = CGRect(x: 0, y: y, width: width, height: height)
         
-        tuningView = TuningView(frame: frame, tuningType: chosenTuning!)
-        tuningView.center.x = view.center.x
-        tuningView.delegate = self
-        view.addSubview(tuningView)
+        notesView = NotesView(frame: frame, tuningType: chosenTuning!)
+        notesView.center.x = view.center.x
+        notesView.delegate = self
+        view.addSubview(notesView)
     }
     
     func processAudio(timeStamps: Double, frameCount: Int, monoSamples: [Float]) {

@@ -2,202 +2,82 @@
 //  TuningView.swift
 //  GuitarTuner
 //
-//  Created by Hoang on 12/27/17.
+//  Created by Hoang on 12/29/17.
 //  Copyright © 2017 Hoang. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 
 class TuningView: UIView {
     
-    static let BUTTON_WIDTH: CGFloat = 0.25
-    static let BUTTON_BORDER_R: CGFloat = 20.0
+    var freqBar: FrequencyBar!
+    var leftLabel: UILabel!
+    var rightLabel: UILabel!
+    var centerMarker: TriangleView!
     
-    var sixth: UIButton!
-    var fifth: UIButton!
-    var fourth: UIButton!
-    var third: UIButton!
-    var second: UIButton!
-    var first: UIButton!
-    var pegs: [UIButton] = [UIButton]()
-    
-    var chosenString: Int = 0
-    weak var delegate: TuningViewDelegate?
-    
-    init(frame: CGRect, tuningType: String) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.backgroundColor = .clear
-        
-        let buttonWidth = frame.width * TuningView.BUTTON_WIDTH
-        let buttonHeight = buttonWidth * 0.85
-        
-        
-        sixth = UIButton()
-        sixth.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(sixth)
-        sixth.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        sixth.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        sixth.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        sixth.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        
-        fifth = UIButton()
-        fifth.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(fifth)
-        fifth.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        fifth.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        fifth.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        fifth.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
-
-        fourth = UIButton()
-        fourth.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(fourth)
-        fourth.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        fourth.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        fourth.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        fourth.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        
-        
-        third = UIButton()
-        third.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(third)
-        third.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        third.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        third.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        third.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        
-        
-        second = UIButton()
-        second.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(second)
-        second.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        second.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        second.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        second.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
-        
-        first = UIButton()
-        first.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(first)
-        first.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        first.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        first.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        first.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        pegs.append(sixth)
-        pegs.append(fifth)
-        pegs.append(fourth)
-        pegs.append(third)
-        pegs.append(second)
-        pegs.append(first)
-        
-        for button in pegs {
-            button.layer.borderWidth = 1
-            button.setTitleColor(.white, for: .normal)
-            button.layer.cornerRadius = TuningView.BUTTON_BORDER_R
-            button.backgroundColor = .darkGray
-            button.addTarget(self, action: #selector(setSelected), for: .touchUpInside)
-        }
-        
-        var i = 0
-        var j = 0
-        while i < tuningType.count {
-            let index = tuningType.index(tuningType.startIndex, offsetBy: i)
-            
-            if i == tuningType.count - 1 {
-                pegs[j].setTitle(String(tuningType[index]), for: .normal)
-                break
-            }
-            
-            let nextIndex = tuningType.index(tuningType.startIndex, offsetBy: i+1)
-            
-            if String(tuningType[nextIndex]) == "#" {
-                let note = String(tuningType[index]) + String(tuningType[nextIndex])
-                pegs[j].setTitle(note, for: .normal)
-                i += 2
-            }
-            else {
-                let note = tuningType[index]
-                pegs[j].setTitle(String(note), for: .normal)
-                i += 1
-            }
-            
-            j += 1
-        }
+        setupFreqBar()
+        setupCenterMarker()
+        setupLabels()
     }
     
-    @objc func setSelected(_ button: UIButton) {
-        switch button {
-        case first:
-            setStringChosen(num: 1)
-        case second:
-            setStringChosen(num: 2)
-        case third:
-            setStringChosen(num: 3)
-        case fourth:
-            setStringChosen(num: 4)
-        case fifth:
-            setStringChosen(num: 5)
-        case sixth:
-            setStringChosen(num: 6)
-        default:
-            break
-        }
+    func setupFreqBar() {
+        let width = self.frame.width
+        let height = self.frame.height * 0.50
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        freqBar = FrequencyBar(frame: frame)
+        freqBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(freqBar)
+        freqBar.widthAnchor.constraint(equalToConstant: width).isActive = true
+        freqBar.heightAnchor.constraint(equalToConstant: height).isActive = true
+        freqBar.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        freqBar.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-    func setStringChosen(num: Int) {
-        setAllUnchosen()
-        var selectedStr: String?
+    func setupCenterMarker() {
+        let width = self.frame.width * 0.05
+        let height = width
+        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        centerMarker = TriangleView(frame: frame, fillColor: .green)
+        centerMarker.translatesAutoresizingMaskIntoConstraints = false
         
-        switch num {
-        case 1:
-            first.backgroundColor = .white
-            first.layer.borderColor = UIColor.black.cgColor
-            first.setTitleColor(.black, for: .normal)
-            selectedStr = first.titleLabel?.text
-        case 2:
-            second.backgroundColor = .white
-            second.layer.borderColor = UIColor.black.cgColor
-            second.setTitleColor(.black, for: .normal)
-            selectedStr = second.titleLabel?.text
-        case 3:
-            third.backgroundColor = .white
-            third.layer.borderColor = UIColor.black.cgColor
-            third.setTitleColor(.black, for: .normal)
-            selectedStr = third.titleLabel?.text
-        case 4:
-            fourth.backgroundColor = .white
-            fourth.layer.borderColor = UIColor.black.cgColor
-            fourth.setTitleColor(.black, for: .normal)
-            selectedStr = fourth.titleLabel?.text
-        case 5:
-            fifth.backgroundColor = .white
-            fifth.layer.borderColor = UIColor.black.cgColor
-            fifth.setTitleColor(.black, for: .normal)
-            selectedStr = fifth.titleLabel?.text
-        case 6:
-            sixth.backgroundColor = .white
-            sixth.layer.borderColor = UIColor.black.cgColor
-            sixth.setTitleColor(.black, for: .normal)
-            selectedStr = sixth.titleLabel?.text
-        default:
-            return
-        }
-        
-        chosenString = num
-        delegate?.didSelect(note: selectedStr!, strInd: num)
+        addSubview(centerMarker)
+        centerMarker.widthAnchor.constraint(equalToConstant: width).isActive = true
+        centerMarker.heightAnchor.constraint(equalToConstant: height).isActive = true
+        centerMarker.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        centerMarker.bottomAnchor.constraint(equalTo: freqBar.topAnchor, constant: 10.0).isActive = true
     }
     
-    func setAllUnchosen() {
-        for button in pegs {
-            button.backgroundColor = .clear
-            button.layer.borderColor = UIColor.black.cgColor
-            button.setTitleColor(.white, for: .normal)
-        }
-        chosenString = 0
+    func setupLabels() {
+        let width = self.frame.width * 0.20
+        let height = self.frame.height * 0.25
+        
+        leftLabel = UILabel()
+        rightLabel = UILabel()
+        
+        leftLabel.translatesAutoresizingMaskIntoConstraints = false
+        leftLabel.text = "-20 Hz"
+        leftLabel.textColor = .white
+        rightLabel.translatesAutoresizingMaskIntoConstraints = false
+        rightLabel.text = "+20 Hz"
+        rightLabel.textColor = .white
+        
+        addSubview(leftLabel)
+        addSubview(rightLabel)
+        
+        leftLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        leftLabel.heightAnchor.constraint(equalToConstant: height).isActive = true
+        leftLabel.centerXAnchor.constraint(equalTo: freqBar.leftAnchor).isActive = true
+        leftLabel.bottomAnchor.constraint(equalTo: freqBar.topAnchor, constant: -5.0).isActive = true
+        
+        rightLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
+        rightLabel.heightAnchor.constraint(equalToConstant: height).isActive = true
+        rightLabel.centerXAnchor.constraint(equalTo: freqBar.rightAnchor).isActive = true
+        rightLabel.bottomAnchor.constraint(equalTo: freqBar.topAnchor, constant: -5.0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -205,8 +85,85 @@ class TuningView: UIView {
     }
 }
 
-protocol TuningViewDelegate: class {
-    func didSelect(note: String, strInd: Int)
+class FrequencyBar: UIView {
+    
+    var freqBar: UIView!
+    var cursor: UIView!
+    var cursorCenterConstraint: NSLayoutConstraint!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupFreqBar()
+        setupCursor()
+    }
+    
+    func setupFreqBar() {
+        let height = self.frame.height * 0.90
+        let width = self.frame.width * 0.99
+        
+        freqBar = UIView()
+        freqBar.backgroundColor = .lightGray
+        freqBar.layer.cornerRadius = 10.0
+        
+        addSubview(freqBar)
+        freqBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        freqBar.widthAnchor.constraint(equalToConstant: width).isActive = true
+        freqBar.heightAnchor.constraint(equalToConstant: height).isActive = true
+        freqBar.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        freqBar.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
+    
+    func setupCursor() {
+        let width: CGFloat = 2.0
+        let height: CGFloat = self.frame.height
+        
+        cursor = UIView()
+        cursor.backgroundColor = .black
+        
+        addSubview(cursor)
+        cursor.translatesAutoresizingMaskIntoConstraints = false
+        
+        cursor.widthAnchor.constraint(equalToConstant: width).isActive = true
+        cursor.heightAnchor.constraint(equalToConstant: height).isActive = true
+        cursorCenterConstraint = cursor.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        cursorCenterConstraint.isActive = true
+        cursor.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
 
-
+class TriangleView: UIView {
+    
+    var fillColor: UIColor!
+    
+    init(frame: CGRect, fillColor: UIColor) {
+        self.fillColor = fillColor
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        
+        context.beginPath()
+        context.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        context.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        context.addLine(to: CGPoint(x: (rect.maxX / 2.0), y: rect.maxY))
+        context.closePath()
+        
+        let rgba = fillColor.rgb()!
+        
+        context.setFillColor(red: rgba.r, green: rgba.g, blue: rgba.b,
+                             alpha: rgba.a)
+        context.fillPath()
+    }
+}
