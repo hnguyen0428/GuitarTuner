@@ -11,7 +11,8 @@ import UIKit
 
 class TuningView: UIView {
     
-    static let BUTTON_WIDTH: CGFloat = 0.20
+    static let BUTTON_WIDTH: CGFloat = 0.25
+    static let BUTTON_BORDER_R: CGFloat = 20.0
     
     var sixth: UIButton!
     var fifth: UIButton!
@@ -20,6 +21,9 @@ class TuningView: UIView {
     var second: UIButton!
     var first: UIButton!
     var pegs: [UIButton] = [UIButton]()
+    
+    var chosenString: Int = 0
+    weak var delegate: TuningViewDelegate?
     
     init(frame: CGRect, tuningType: String) {
         super.init(frame: frame)
@@ -93,18 +97,116 @@ class TuningView: UIView {
         for button in pegs {
             button.layer.borderWidth = 1
             button.setTitleColor(.white, for: .normal)
-            button.layer.cornerRadius = 10
+            button.layer.cornerRadius = TuningView.BUTTON_BORDER_R
             button.backgroundColor = .darkGray
+            button.addTarget(self, action: #selector(setSelected), for: .touchUpInside)
         }
         
         var i = 0
-        for char in tuningType {
-            pegs[i].setTitle(String(char), for: .normal)
-            i += 1
+        var j = 0
+        while i < tuningType.count {
+            let index = tuningType.index(tuningType.startIndex, offsetBy: i)
+            
+            if i == tuningType.count - 1 {
+                pegs[j].setTitle(String(tuningType[index]), for: .normal)
+                break
+            }
+            
+            let nextIndex = tuningType.index(tuningType.startIndex, offsetBy: i+1)
+            
+            if String(tuningType[nextIndex]) == "#" {
+                let note = String(tuningType[index]) + String(tuningType[nextIndex])
+                pegs[j].setTitle(note, for: .normal)
+                i += 2
+            }
+            else {
+                let note = tuningType[index]
+                pegs[j].setTitle(String(note), for: .normal)
+                i += 1
+            }
+            
+            j += 1
         }
+    }
+    
+    @objc func setSelected(_ button: UIButton) {
+        switch button {
+        case first:
+            setStringChosen(num: 1)
+        case second:
+            setStringChosen(num: 2)
+        case third:
+            setStringChosen(num: 3)
+        case fourth:
+            setStringChosen(num: 4)
+        case fifth:
+            setStringChosen(num: 5)
+        case sixth:
+            setStringChosen(num: 6)
+        default:
+            break
+        }
+    }
+    
+    func setStringChosen(num: Int) {
+        setAllUnchosen()
+        var selectedStr: String?
+        
+        switch num {
+        case 1:
+            first.backgroundColor = .white
+            first.layer.borderColor = UIColor.black.cgColor
+            first.setTitleColor(.black, for: .normal)
+            selectedStr = first.titleLabel?.text
+        case 2:
+            second.backgroundColor = .white
+            second.layer.borderColor = UIColor.black.cgColor
+            second.setTitleColor(.black, for: .normal)
+            selectedStr = second.titleLabel?.text
+        case 3:
+            third.backgroundColor = .white
+            third.layer.borderColor = UIColor.black.cgColor
+            third.setTitleColor(.black, for: .normal)
+            selectedStr = third.titleLabel?.text
+        case 4:
+            fourth.backgroundColor = .white
+            fourth.layer.borderColor = UIColor.black.cgColor
+            fourth.setTitleColor(.black, for: .normal)
+            selectedStr = fourth.titleLabel?.text
+        case 5:
+            fifth.backgroundColor = .white
+            fifth.layer.borderColor = UIColor.black.cgColor
+            fifth.setTitleColor(.black, for: .normal)
+            selectedStr = fifth.titleLabel?.text
+        case 6:
+            sixth.backgroundColor = .white
+            sixth.layer.borderColor = UIColor.black.cgColor
+            sixth.setTitleColor(.black, for: .normal)
+            selectedStr = sixth.titleLabel?.text
+        default:
+            return
+        }
+        
+        chosenString = num
+        delegate?.didSelect(note: selectedStr!, strInd: num)
+    }
+    
+    func setAllUnchosen() {
+        for button in pegs {
+            button.backgroundColor = .clear
+            button.layer.borderColor = UIColor.black.cgColor
+            button.setTitleColor(.white, for: .normal)
+        }
+        chosenString = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }
+
+protocol TuningViewDelegate: class {
+    func didSelect(note: String, strInd: Int)
+}
+
+

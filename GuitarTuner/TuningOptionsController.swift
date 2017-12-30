@@ -8,16 +8,133 @@
 
 import UIKit
 
-class TuningOptionsController: UITableViewController {
+let tuningTypes: [String] = ["EADGBE", "DADGBE"]
+let tuningNames: [String: String] = [
+    "EADGBE": "Standard Tuning (EADGBE)",
+    "DADGBE": "Dropped D (DADGBE)"
+]
+
+class TuningOptionsController: UIViewController, UIPickerViewDelegate,
+                                UIPickerViewDataSource, UITextFieldDelegate {
     
-    let options: [String] = ["EADGBE", "DADGBE"]
+    var chosenTuning: String? = nil
+    
+    var textfield: UITextField!
+    var label: UILabel!
+    var tuneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = .darkGray
+        setupTextfield()
+        setupLabel()
+        setupTuneButton()
+        setupPicker()
+    }
+    
+    func setupTextfield() {
+        let width = view.frame.width * 0.60
+        let height = view.frame.height * 0.05
         
-        tableView.register(TuningOptionCell.self, forCellReuseIdentifier: "cell")
-        tableView.tableFooterView = UIView()
+        textfield = UITextField()
+        textfield.backgroundColor = .black
+        textfield.alpha = 0.5
+        textfield.layer.cornerRadius = 10.0
+        textfield.textAlignment = .center
+        textfield.textColor = .white
+        textfield.tintColor = .clear
+        textfield.delegate = self
+        
+        view.addSubview(textfield)
+        
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        
+        textfield.widthAnchor.constraint(equalToConstant: width).isActive = true
+        textfield.heightAnchor.constraint(equalToConstant: height).isActive = true
+        textfield.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        let barOffset = self.navigationController?.navigationBar.frame.height
+        let topOffset = view.frame.height * 0.20
+        textfield.topAnchor.constraint(equalTo: view.topAnchor,
+                                       constant: barOffset! + topOffset).isActive = true
+        
+    }
+    
+    func setupLabel() {
+        let width = view.frame.width * 0.60
+        let height = view.frame.height * 0.05
+        
+        label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.text = "Choose tuning type"
+        label.textAlignment = .center
+        
+        view.addSubview(label)
+        
+        label.widthAnchor.constraint(equalToConstant: width).isActive = true
+        label.heightAnchor.constraint(equalToConstant: height).isActive = true
+        label.bottomAnchor.constraint(equalTo: textfield.topAnchor, constant: -20.0).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func setupTuneButton() {
+        let width = view.frame.width * 0.30
+        let height = view.frame.height * 0.06
+        
+        tuneButton = UIButton()
+        tuneButton.translatesAutoresizingMaskIntoConstraints = false
+        tuneButton.setTitle("Start Tuning", for: .normal)
+        tuneButton.layer.cornerRadius = 10.0
+        tuneButton.backgroundColor = .lightGray
+        tuneButton.isEnabled = false
+        tuneButton.alpha = 0.7
+        
+        view.addSubview(tuneButton)
+        
+        tuneButton.widthAnchor.constraint(equalToConstant: width).isActive = true
+        tuneButton.heightAnchor.constraint(equalToConstant: height).isActive = true
+        tuneButton.topAnchor.constraint(equalTo: textfield.bottomAnchor, constant: 20.0).isActive = true
+        tuneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        tuneButton.addTarget(self, action: #selector(startTuning), for: .touchUpInside)
+    }
+    
+    func setupPicker() {
+        let pickerView: UIPickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        textfield.inputView = pickerView
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        tuneButton.isEnabled = true
+        tuneButton.alpha = 1.0
+        chosenTuning = tuningTypes[row]
+        textfield.text = tuningNames[chosenTuning!]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return tuningNames[tuningTypes[row]]
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return tuningTypes.count
+    }
+    
+    @objc func startTuning(_ sender: UIButton) {
+        let tvc = TuningViewController()
+        tvc.chosenTuning = chosenTuning
+        
+        self.navigationController?.pushViewController(tvc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,48 +142,5 @@ class TuningOptionsController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TuningOptionCell
-        
-        cell.tuningType = options[indexPath.row]
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.count
-    }
-    
-}
-
-class TuningOptionCell: UITableViewCell {
-    
-    var label: UILabel!
-    var tuningType: String? {
-        didSet {
-            label.text = tuningType
-        }
-    }
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let cellFrame = self.frame
-        let width = cellFrame.width * 0.40
-        let height = cellFrame.height * 0.80
-        let frame = CGRect(x: 10, y: 0, width: width, height: height)
-        label = UILabel(frame: frame)
-        label.center.y = self.center.y
-        addSubview(label)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 }

@@ -17,11 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let controller = TuningViewController()
+        let controller = TuningOptionsController()
         let navController = UINavigationController(rootViewController: controller)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = navController
+        
+        let navbarAppearance = UINavigationBar.appearance()
+        navbarAppearance.barTintColor = UIColor.lightGray
         
         return true
     }
