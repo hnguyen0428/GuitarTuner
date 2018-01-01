@@ -58,10 +58,14 @@ class Tuner {
     /// Return: float, difference in frequency,
     func inTuned(freq: Float) -> Bool {
         var currFreq = noteFundFrequency
+        
+        // Used to determine which harmonic the note is closest to
+        var allHarmonicsFreq: [Float:Float] = [Float:Float]()
         var tuned = false
         
         // Try to find if the frequency played is part of the note's harmonic
         while(currFreq < cutoffFreq) {
+            allHarmonicsFreq[currFreq] = abs(currFreq - freq)
             if within(float1: currFreq, float2: freq, range: Tuner.range) {
                 tuned = true
                 break
@@ -69,6 +73,16 @@ class Tuner {
             currFreq *= 2
         }
         
+        var minValue: Float = allHarmonicsFreq.first!.value
+        var closestNoteFrequency: Float = allHarmonicsFreq.first!.key
+        for (key, value) in allHarmonicsFreq {
+            if minValue > value {
+                minValue = value
+                closestNoteFrequency = key
+            }
+        }
+        
+        self.noteFrequency = closestNoteFrequency
         return tuned
     }
     

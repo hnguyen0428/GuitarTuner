@@ -80,6 +80,22 @@ class TuningView: UIView {
         rightLabel.bottomAnchor.constraint(equalTo: freqBar.topAnchor, constant: -5.0).isActive = true
     }
     
+    func moveCursor(actualFreq: Float, centerFreq: Float) {
+        freqBar.moveCursor(actualFreq: actualFreq, centerFreq: centerFreq)
+    }
+    
+    func resetCursor() {
+        freqBar.resetCursor()
+    }
+    
+    func turnGreen() {
+        freqBar.turnGreen()
+    }
+    
+    func resetColor() {
+        freqBar.resetColor()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -89,7 +105,8 @@ class FrequencyBar: UIView {
     
     var freqBar: UIView!
     var cursor: UIView!
-    var cursorCenterConstraint: NSLayoutConstraint!
+    var cursorCenterXConstraint: NSLayoutConstraint!
+    var initialPos: CGFloat = 0.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -127,9 +144,46 @@ class FrequencyBar: UIView {
         
         cursor.widthAnchor.constraint(equalToConstant: width).isActive = true
         cursor.heightAnchor.constraint(equalToConstant: height).isActive = true
-        cursorCenterConstraint = cursor.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        cursorCenterConstraint.isActive = true
+        cursorCenterXConstraint = cursor.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        cursorCenterXConstraint.isActive = true
+        initialPos = cursorCenterXConstraint.constant
         cursor.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    }
+    
+    func moveCursor(actualFreq: Float, centerFreq: Float) {
+        let diff = actualFreq - centerFreq
+        
+        // Scale to the frequency bar
+        let ratio = diff / 20.0
+        let halfBarLength = freqBar.frame.width / 2
+        
+        var moveLength = halfBarLength * CGFloat(ratio)
+        if ratio > 1.0 {
+            moveLength = halfBarLength
+        }
+        else if ratio < -1.0 {
+            moveLength = -halfBarLength
+        }
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.cursorCenterXConstraint.constant = self.initialPos + moveLength
+        })
+    }
+    
+    func resetCursor() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.cursorCenterXConstraint.constant = self.initialPos
+        })
+    }
+    
+    func turnGreen() {
+        freqBar.backgroundColor = .green
+        freqBar.alpha = 0.8
+    }
+    
+    func resetColor() {
+        freqBar.backgroundColor = .lightGray
+        freqBar.alpha = 1.0
     }
     
     required init?(coder aDecoder: NSCoder) {

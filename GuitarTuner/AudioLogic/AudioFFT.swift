@@ -7,8 +7,9 @@
 //
 
 import Accelerate
+import Foundation
 
-let accumulatorDataLength = 32768
+let accumulatorDataLength = 1 << 17
 
 // Cut off frequency for second order filter
 let centerFreq: Float = 90.0

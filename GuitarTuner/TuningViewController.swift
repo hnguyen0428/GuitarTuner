@@ -81,7 +81,12 @@ class TuningViewController: UIViewController, NotesViewDelegate {
             return
         }
         
-        let audioFFT = AudioFFT(sampleSize: frameCount, cutoffFreq: firstCutoffFreq)
+        DispatchQueue.main.async {
+            self.tuningView.resetCursor()
+            self.tuningView.resetColor()
+        }
+        
+        let audioFFT = AudioFFT(sampleSize: frameCount, cutoffFreq: cutoffFreq)
         audioFFT.computeFFT(monoSamples)
         
         let outFFTData = audioFFT.outFFTData
@@ -102,11 +107,23 @@ class TuningViewController: UIViewController, NotesViewDelegate {
             print("Tuning note: \(tuner.note)")
             print("Tuning note frequency: \(tuner.noteFrequency) Hz")
             print("In tuned: \(inTuned)")
+            
+            DispatchQueue.main.async {
+                if inTuned {
+                    self.tuningView.turnGreen()
+                    self.tuningView.moveCursor(actualFreq: tuner.noteFrequency,
+                                               centerFreq: tuner.noteFrequency)
+                }
+                else {
+                    self.tuningView.moveCursor(actualFreq: audioFrequency,
+                                               centerFreq: tuner.noteFrequency)
+                }
+            }
         }
     }
     
     func didSelect(note: String, strInd: Int) {
-        tuner = Tuner(note: note, mul: 2)
+        tuner = Tuner(note: note)
         
         switch strInd {
         case 1:
