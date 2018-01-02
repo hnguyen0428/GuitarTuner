@@ -6,7 +6,6 @@
 //  Copyright © 2017 Hoang. All rights reserved.
 //
 
-import AudioToolbox
 import AVFoundation
 
 let kSampleRate: Float = 44100.0
