@@ -7,7 +7,6 @@
 //
 
 import Accelerate
-import Foundation
 
 let accumulatorDataLength = 1 << 17
 
@@ -67,7 +66,7 @@ class AudioFFT {
     func computeFFT(_ monoSamples: [Float]) {
         var reals = [Float]()
         var imags = [Float]()
-        var mFFTNormFactor = Float(1.0) / Float(2*sampleSize)
+        var normFactor = Float(1.0) / Float(2*sampleSize)
         
         var samples = monoSamples
         
@@ -94,8 +93,8 @@ class AudioFFT {
         vDSP_fft_zrip(fftsetup, &(complexA!), 1, UInt(log2n), Int32(FFT_FORWARD))
         
         // Scale FFT
-        vDSP_vsmul(complexA.realp, 1, &mFFTNormFactor, complexA.realp, 1, vDSP_Length(sampleSize/2))
-        vDSP_vsmul(complexA.imagp, 1, &mFFTNormFactor, complexA.imagp, 1, vDSP_Length(sampleSize/2))
+        vDSP_vsmul(complexA.realp, 1, &normFactor, complexA.realp, 1, vDSP_Length(sampleSize/2))
+        vDSP_vsmul(complexA.imagp, 1, &normFactor, complexA.imagp, 1, vDSP_Length(sampleSize/2))
         
         // Get magnitudes data
         vDSP_zvmags(&(self.complexA!), 1, &self.outFFTData, 1, UInt(halfSize))

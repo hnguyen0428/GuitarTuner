@@ -11,7 +11,7 @@ import UIKit
 
 class NotesView: UIView {
     
-    static let BUTTON_WIDTH: CGFloat = 0.25
+    static let BUTTON_WIDTH: CGFloat = 0.30
     static let BUTTON_BORDER_R: CGFloat = 20.0
     
     var sixth: UIButton!
@@ -98,7 +98,8 @@ class NotesView: UIView {
             button.layer.borderWidth = 1
             button.setTitleColor(.white, for: .normal)
             button.layer.cornerRadius = NotesView.BUTTON_BORDER_R
-            button.backgroundColor = .darkGray
+            button.backgroundColor = UIColor(r: 30, g: 30, b: 30)
+            button.layer.borderColor = UIColor.white.cgColor
             button.addTarget(self, action: #selector(setSelected), for: .touchUpInside)
         }
         
@@ -193,8 +194,8 @@ class NotesView: UIView {
     
     func setAllUnchosen() {
         for button in pegs {
-            button.backgroundColor = .clear
-            button.layer.borderColor = UIColor.black.cgColor
+            button.backgroundColor = UIColor(r: 30, g: 30, b: 30)
+            button.layer.borderColor = UIColor.white.cgColor
             button.setTitleColor(.white, for: .normal)
         }
         chosenString = 0

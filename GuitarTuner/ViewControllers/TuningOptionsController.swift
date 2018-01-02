@@ -8,16 +8,21 @@
 
 import UIKit
 
-let tuningTypes: [String] = ["EADGBE", "DADGBE"]
+let tuningTypes: [String] = ["", "EADGBE", "DADGBE", "FADGBE", "DADF#AD", "CGCGCE"]
 let tuningNames: [String: String] = [
+    "": "",
     "EADGBE": "Standard Tuning (EADGBE)",
-    "DADGBE": "Dropped D (DADGBE)"
+    "DADGBE": "Dropped D (DADGBE)",
+    "FADGBE": "FADGBE",
+    "DADF#AD": "Open D Tuning (DADF#AD)",
+    "CGCGCE": "Open C Tuning (CGCGCE)"
 ]
 
 class TuningOptionsController: UIViewController, UIPickerViewDelegate,
                                 UIPickerViewDataSource, UITextFieldDelegate {
     
     var chosenTuning: String? = nil
+    var chosenTuningName: String? = nil
     
     var textfield: UITextField!
     var label: UILabel!
@@ -26,11 +31,14 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = .darkGray
+        view.backgroundColor = UIColor(r: 50, g: 50, b: 50)
         setupTextfield()
         setupLabel()
         setupTuneButton()
         setupPicker()
+        
+        self.title = "GuitarTuner"
+        self.navigationController?.navigationBar.barStyle = .black
     }
     
     func setupTextfield() {
@@ -86,7 +94,7 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
         tuneButton.translatesAutoresizingMaskIntoConstraints = false
         tuneButton.setTitle("Start Tuning", for: .normal)
         tuneButton.layer.cornerRadius = 10.0
-        tuneButton.backgroundColor = .lightGray
+        tuneButton.backgroundColor = .darkGray
         tuneButton.isEnabled = false
         tuneButton.alpha = 0.7
         
@@ -104,6 +112,7 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
         let pickerView: UIPickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
+        pickerView.backgroundColor = .darkGray
         textfield.inputView = pickerView
     }
     
@@ -112,10 +121,18 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tuneButton.isEnabled = true
-        tuneButton.alpha = 1.0
+        if row == 0 {
+            tuneButton.isEnabled = false
+            tuneButton.alpha = 0.7
+        }
+        else {
+            tuneButton.isEnabled = true
+            tuneButton.alpha = 1.0
+        }
         chosenTuning = tuningTypes[row]
-        textfield.text = tuningNames[chosenTuning!]
+        chosenTuningName = tuningNames[chosenTuning!]
+        
+        textfield.text = chosenTuningName
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -133,6 +150,7 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
     @objc func startTuning(_ sender: UIButton) {
         let tvc = TuningViewController()
         tvc.chosenTuning = chosenTuning
+        tvc.chosenTuningName = chosenTuningName
         
         self.navigationController?.pushViewController(tvc, animated: true)
     }

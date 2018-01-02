@@ -141,12 +141,10 @@
 		477A0B451FF3BCF40098D31A /* GuitarTuner */ = {
 			isa = PBXGroup;
 			children = (
+				477CB3711FFAF6B500BC218B /* Views */,
+				477CB3701FFAF69A00BC218B /* ViewControllers */,
 				477A0B781FF49BF60098D31A /* AudioLogic */,
 				477A0B461FF3BCF40098D31A /* AppDelegate.swift */,
-				477A0B481FF3BCF40098D31A /* TuningViewController.swift */,
-				477A0B761FF485940098D31A /* NotesView.swift */,
-				477A0B741FF3BE850098D31A /* TuningOptionsController.swift */,
-				477A0B7F1FF74CCF0098D31A /* TuningView.swift */,
 				477A0B811FF751950098D31A /* ExtensionHelpers.swift */,
 				477A0B4A1FF3BCF40098D31A /* Main.storyboard */,
 				477A0B4D1FF3BCF40098D31A /* Assets.xcassets */,
@@ -182,6 +180,24 @@
 				477A0B7D1FF5D08C0098D31A /* Tuner.swift */,
 			);
 			path = AudioLogic;
+			sourceTree = "<group>";
+		};
+		477CB3701FFAF69A00BC218B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B741FF3BE850098D31A /* TuningOptionsController.swift */,
+				477A0B481FF3BCF40098D31A /* TuningViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		477CB3711FFAF6B500BC218B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				477A0B7F1FF74CCF0098D31A /* TuningView.swift */,
+				477A0B761FF485940098D31A /* NotesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		62A541A0C9CEB857D21D72F6 /* Frameworks */ = {

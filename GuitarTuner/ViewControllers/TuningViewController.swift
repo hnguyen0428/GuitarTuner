@@ -21,8 +21,10 @@ class TuningViewController: UIViewController, NotesViewDelegate {
     var notesView: NotesView!
     var tuningView: TuningView!
     var audioManager: AudioManager!
+    var recordingStarted = false
     
     var chosenTuning: String? = nil
+    var chosenTuningName: String? = nil
     
     var tuner: Tuner? = nil
     var cutoffFreq: Float = 0.0
@@ -31,7 +33,7 @@ class TuningViewController: UIViewController, NotesViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.backgroundColor = UIColor.darkGray
+        view.backgroundColor = UIColor(r: 50, g: 50, b: 50)
         setupTuningView()
         setupNotesView()
         
@@ -44,6 +46,9 @@ class TuningViewController: UIViewController, NotesViewDelegate {
         audioManager = AudioManager(audioInputCallback: audioCallback,
                                     sampleRate: kSampleRate,
                                     numberOfChannels: 1)
+        
+        self.title = chosenTuningName
+        self.navigationController?.navigationBar.barStyle = .black
     }
     
     func setupTuningView() {
@@ -103,10 +108,10 @@ class TuningViewController: UIViewController, NotesViewDelegate {
         
         if let tuner = self.tuner {
             let inTuned = tuner.inTuned(freq: audioFrequency)
-            print("Max Frequency: \(audioFrequency) Hz")
-            print("Tuning note: \(tuner.note)")
-            print("Tuning note frequency: \(tuner.noteFrequency) Hz")
-            print("In tuned: \(inTuned)")
+//            print("Audio Frequency: \(audioFrequency) Hz")
+//            print("Tuning note: \(tuner.note)")
+//            print("Tuning note frequency: \(tuner.noteFrequency) Hz")
+//            print("In tuned: \(inTuned)")
             
             DispatchQueue.main.async {
                 if inTuned {
@@ -143,11 +148,15 @@ class TuningViewController: UIViewController, NotesViewDelegate {
         }
         
         audioManager.startRecording()
+        recordingStarted = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        audioManager.stopRecording()
+        
+        if recordingStarted {
+            audioManager.stopRecording()
+        }
     }
     
     override func didReceiveMemoryWarning() {

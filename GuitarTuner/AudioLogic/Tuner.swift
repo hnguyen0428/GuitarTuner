@@ -13,7 +13,7 @@ let cutoffFreq: Float = 4100.0
 
 class Tuner {
     
-    static let range: Float = 1.0
+    static let range: Float = 0.38
     
     var noteFundFrequency: Float
     var noteFrequency: Float

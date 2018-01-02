@@ -11,6 +11,8 @@ import UIKit
 
 class TuningView: UIView {
     
+    static let FREQ_RANGE: Float = 20.0
+    
     var freqBar: FrequencyBar!
     var leftLabel: UILabel!
     var rightLabel: UILabel!
@@ -60,10 +62,10 @@ class TuningView: UIView {
         rightLabel = UILabel()
         
         leftLabel.translatesAutoresizingMaskIntoConstraints = false
-        leftLabel.text = "-20 Hz"
+        leftLabel.text = "-\(Int(TuningView.FREQ_RANGE)) Hz"
         leftLabel.textColor = .white
         rightLabel.translatesAutoresizingMaskIntoConstraints = false
-        rightLabel.text = "+20 Hz"
+        rightLabel.text = "+\(Int(TuningView.FREQ_RANGE)) Hz"
         rightLabel.textColor = .white
         
         addSubview(leftLabel)
@@ -121,6 +123,7 @@ class FrequencyBar: UIView {
         
         freqBar = UIView()
         freqBar.backgroundColor = .lightGray
+        freqBar.alpha = 0.8
         freqBar.layer.cornerRadius = 10.0
         
         addSubview(freqBar)
@@ -154,7 +157,7 @@ class FrequencyBar: UIView {
         let diff = actualFreq - centerFreq
         
         // Scale to the frequency bar
-        let ratio = diff / 20.0
+        let ratio = diff / TuningView.FREQ_RANGE
         let halfBarLength = freqBar.frame.width / 2
         
         var moveLength = halfBarLength * CGFloat(ratio)
@@ -178,12 +181,10 @@ class FrequencyBar: UIView {
     
     func turnGreen() {
         freqBar.backgroundColor = .green
-        freqBar.alpha = 0.8
     }
     
     func resetColor() {
         freqBar.backgroundColor = .lightGray
-        freqBar.alpha = 1.0
     }
     
     required init?(coder aDecoder: NSCoder) {
