@@ -8,14 +8,28 @@
 
 import UIKit
 
-let tuningTypes: [String] = ["", "EADGBE", "DADGBE", "FADGBE", "DADF#AD", "CGCGCE"]
+let tuningTypes: [String] = ["", "EADGBE", "DADGBE", "DADF#AD",
+                             "CGCGCE", "EAC#EAE", "BF#BF#BD#", "EBEG#BE",
+                             "FACFCF", "DGDGBD", "D#G#C#F#A#D#",
+                             "DGCFAD", "FADGBE", "DADGAD", "DADDAD",
+                             "C#G#C#F#A#D#"]
 let tuningNames: [String: String] = [
     "": "",
-    "EADGBE": "Standard Tuning (EADGBE)",
-    "DADGBE": "Dropped D (DADGBE)",
-    "FADGBE": "FADGBE",
-    "DADF#AD": "Open D Tuning (DADF#AD)",
-    "CGCGCE": "Open C Tuning (CGCGCE)"
+    "EADGBE": "Standard Tuning (E-A-D-G-B-E)",
+    "DADGBE": "Drop D (D-A-D-G-B-E)",
+    "DADF#AD": "Open D Tuning (D-A-D-F#-A-D)",
+    "CGCGCE": "Open C Tuning (C-G-C-G-C-E)",
+    "EAC#EAE": "Open A Tuning (E-A-C#-E-A-E)",
+    "BF#BF#BD#": "Open B Tuning (B-F#-B-F#-B-D#)",
+    "EBEG#BE": "Open E Tuning (E-B-E-G#-B-E)",
+    "FACFCF": "Open F Tuning (F-A-C-F-C-F)",
+    "DGDGBD": "Open G Tuning (D-G-D-G-B-D)",
+    "D#G#C#F#A#D#": "Half step (D#-G#-C#-F#-A#-D#)",
+    "DGCFAD": "One step down (D-G-C-F-A-D)",
+    "FADGBE": "F-A-D-G-B-E",
+    "DADGAD": "D-A-D-G-A-D",
+    "DADDAD": "D-A-D-D-A-D",
+    "C#G#C#F#A#D#": "C#-G#-C#-F#-A#-D#"
 ]
 
 class TuningOptionsController: UIViewController, UIPickerViewDelegate,
@@ -36,6 +50,8 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
         setupLabel()
         setupTuneButton()
         setupPicker()
+        
+        restoreLastTuning()
         
         self.title = "GuitarTuner"
         self.navigationController?.navigationBar.barStyle = .black
@@ -116,6 +132,17 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
         textfield.inputView = pickerView
     }
     
+    func restoreLastTuning() {
+        let lastTuning = UserDefaults.standard.object(forKey: "last_tuning") as? String
+        if let tuning = lastTuning {
+            chosenTuning = tuning
+            chosenTuningName = tuningNames[tuning]
+            textfield.text = chosenTuningName
+            tuneButton.isEnabled = true
+            tuneButton.alpha = 1.0
+        }
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
@@ -153,6 +180,9 @@ class TuningOptionsController: UIViewController, UIPickerViewDelegate,
         tvc.chosenTuningName = chosenTuningName
         
         self.navigationController?.pushViewController(tvc, animated: true)
+        
+        UserDefaults.standard.set(chosenTuning, forKey: "last_tuning")
+        UserDefaults.standard.synchronize()
     }
     
     override func didReceiveMemoryWarning() {
